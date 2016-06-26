@@ -34,7 +34,7 @@ library(ggplot2)
 totalSteps <- tapply(activityData$steps, activityData$date, sum, na.rm=TRUE)
 qplot(totalSteps, xlab='Total Steps on a Given Day (Bin Width = 1000)', ylab='Frequency of Days When X Number of Steps Taken', binwidth=1000, fill = I("steelblue"), col = I("grey"))
 ```
-
+![plot of plot1](./plots/plot1.png) 
 
 ### 3) Mean and median number of steps taken each day
 Display the mean and median values when NA values removed
@@ -55,7 +55,8 @@ ggplot(data=averageSteps, aes(x=interval, y=meanSteps)) +
     xlab("Interval Value (Every 5 Min)") +
     ylab("Mean Steps Taken") 
 ```
-	
+![plot of plot2](./plots/plot2.png)
+
 ### 5) The 5-minute interval that, on average, contains the maximum number of steps
 The interval value which the highest steps were recorded on average
 ```{r}
@@ -97,9 +98,9 @@ stepsMean <- mean(totalSteps)
 stepsMean
 stepsMedian <- median(totalSteps)
 stepsMedian
-
-
 ```
+![plot of plot3](./plots/plot3.png)
+
 ### 8) Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends
 A new column to indicate whether a day was on a weekday or weekend needs to be added.
 
@@ -117,3 +118,4 @@ ggplot(averageStepsFilledDate, aes(interval, steps)) +
     ylab("Mean Steps Taken") 
 
 ```
+![plot of plot4](./plots/plot4.png) 
